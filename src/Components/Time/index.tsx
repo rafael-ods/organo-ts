@@ -21,6 +21,7 @@ const Time = ({ name, corPrimary, corSecundary, colaboradores }: TimeProps) => {
             key={colaborador.nome}
             name={colaborador.nome}
             office={colaborador.cargo}
+            date={colaborador.data}
             srcImage={colaborador.imagem}
             backgroundColorCard={corPrimary}
           />

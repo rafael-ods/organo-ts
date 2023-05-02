@@ -17,6 +17,10 @@ const Formulario = ({times, aoColaboradorCadastrado} : FormularioProps) => {
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
+    const [data, setData] = useState('')
+
+    const dateFormt = new Date().toLocaleDateString()
+   
 
     const aoSalvar = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -25,11 +29,13 @@ const Formulario = ({times, aoColaboradorCadastrado} : FormularioProps) => {
             cargo,
             imagem,
             time,
+            data: dateFormt
         })
         setNome('')
         setCargo('')
         setImagem('')
         setTime('')
+        setData('')
     }
 
     return (
@@ -58,6 +64,14 @@ const Formulario = ({times, aoColaboradorCadastrado} : FormularioProps) => {
                     placeholder="Digite o endereço da imagem" 
                     value={imagem}
                     setValue={valor => setImagem(valor)}
+                />
+                <CampoTexto
+                    required
+                    type='date'
+                    label="Data de entrada no time"
+                    placeholder=''
+                    value={data}
+                    setValue={valor => setData(valor)}
                 />
                 <ListaSuspensa
                     required

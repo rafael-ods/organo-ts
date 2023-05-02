@@ -1,7 +1,7 @@
 import "./CampoTexto.css";
 
 interface CampoTextoProps {
-  type: string;
+  type?: 'text' | 'password' | 'email' | 'date' | 'tel';
   label: string;
   value: string;
   required?: boolean;
@@ -10,7 +10,7 @@ interface CampoTextoProps {
 }
 
 const CampoTexto = ({
-  type,
+  type = 'text',
   label,
   value,
   setValue,
